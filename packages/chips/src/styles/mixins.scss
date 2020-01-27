@@ -1,5 +1,5 @@
 @import "@rsmdc/ripple/mixins-stencil";
-@mixin rs-chip-leading-icon-image($icon, $codepoint: "") {
+@mixin rs-chip-icon-image($icon, $codepoint: "") {
   $value: if(str-slice("#{$icon}", 1, 4) == "url(", path, font-family);
 
   @if $value == path {
@@ -15,35 +15,28 @@
       > .label::before {
         font-family: $font-family;
         content: $name;
-        display: block;
+        display: inline-block;
       }
+
       > .label::after {
+        font-family: $font-family;
+        content: $name;
         display: none;
       }
     }
   }
 }
 
-@mixin rs-chip-trailing-icon-image($icon, $codepoint: "") {
-  $value: if(str-slice("#{$icon}", 1, 4) == "url(", path, font-family);
-
-  @if $value == path {
-    .rs-chip > .label {
-      background-image: $icon;
-      height: 24px;
-    }
-  } @else {
-    $font-family: '"' + $icon + '"';
-    $name: '"' + "\\"+ $codepoint + '"';
-
+@mixin rs-chip-icon-position($position) {
+  @if $position == right {
+    
     .rs-chip {
       > .label::before {
         display: none;
       }
+
       > .label::after {
-        font-family: $font-family;
-        content: $name;
-        display: block;
+        display: inline-block;
       }
     }
   }
@@ -112,14 +105,12 @@
   @if ($fill-tone == "dark") {
     @include rs-chip-ink-color(rs-theme-ink-color-for-fill_(primary, dark));
     @include rs-chip-selected-ink-color(text-primary-on-dark);
-    @include rs-chip-leading-icon-color(text-primary-on-dark);
-    @include rs-chip-trailing-icon-color(text-primary-on-dark);
+    @include rs-chip-icon-color(text-primary-on-dark);
     @include rs-ripple-upgraded(rs-theme-ink-color-for-fill_(primary, dark));
   } @else {
     @include rs-chip-ink-color(rs-theme-ink-color-for-fill_(primary, light));
     @include rs-chip-selected-ink-color(text-primary-on-light);
-    @include rs-chip-leading-icon-color(text-primary-on-light);
-    @include rs-chip-trailing-icon-color(text-primary-on-light);
+    @include rs-chip-icon-color(text-primary-on-light);
     @include rs-ripple-upgraded(rs-theme-ink-color-for-fill_(primary, light));
   }
 }
@@ -149,33 +140,25 @@
   }
 }
 
-@mixin rs-chip-leading-icon-color($color, $opacity: $rs-chip-icon-opacity) {
+@mixin rs-chip-icon-color($color, $opacity: $rs-chip-icon-opacity) {
   .rs-chip {
     > .label::before {
       color: $color;
     }
-  }
-}
 
-@mixin rs-chip-trailing-icon-color($color, $opacity: $rs-chip-icon-opacity) {
-  .rs-chip {
     > .label::after {
       color: $color;
     }
   }
 }
 
-@mixin rs-chip-leading-icon-margin($left-margin: $rs-chip-leading-icon-margin-left, $right-margin: $rs-chip-leading-icon-margin-right) {
+@mixin rs-chip-icon-margin($left-margin: $rs-chip-leading-icon-margin-left, $right-margin: $rs-chip-leading-icon-margin-right) {
   .rs-chip {
     > .label::before {
       margin-left: $left-margin;
       margin-right: $right-margin;
     }
-  }
-}
 
-@mixin rs-chip-trailing-icon-margin($left-margin: $rs-chip-trailing-icon-margin-left, $right-margin: $rs-chip-trailing-icon-margin-right) {
-  .rs-chip {
     > .label::after {
       margin-left: $left-margin;
       margin-right: $right-margin;
@@ -183,21 +166,18 @@
   }
 }
 
-@mixin rs-chip-leading-icon-size($size) {
+@mixin rs-chip-icon-size($size) {
   .rs-chip {
     > .label::before {
       font-size: $size;
     }
-  }
-}
 
-@mixin rs-chip-trailing-icon-size($size) {
-  .rs-chip {
     > .label::after {
       font-size: $size;
     }
   }
 }
+
 
 @mixin rs-chip-shape-radius($radius) {
   .rs-chip {

@@ -14,7 +14,7 @@
 
 .rs-chip {
   @include rs-chip-height($rs-chip-height-default);
-  @include rs-chip-leading-icon-margin;
+  @include rs-chip-icon-margin;
   @include rs-ripple-surface;
   @include rs-ripple-radius-bounded;
   @include rs-ripple-upgraded($rs-chip-ink-color-default);
@@ -46,19 +46,22 @@
 
   > .label::before {
     font-family: inherit;
+    width: auto;
     height: auto;
-    display: none;
+    display: inline-block;
     content: none;
     margin: $rs-chip-leading-icon-margin-top;
     margin-right: $rs-chip-leading-icon-margin-right;
-    margin-left: auto;
+    margin-left: $rs-chip-leading-icon-margin-left;
     font-size: $rs-chip-leading-icon-size;
     color: $rs-theme-on-surface;
   }
 
   > .label::after {
-    display: none;
     font-family: inherit;
+    display: none;
+    width: auto;
+    height: auto;
     content: none;
     margin: $rs-chip-trailing-icon-margin-top;
     margin-left: $rs-chip-trailing-icon-margin-left;
