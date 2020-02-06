@@ -104,7 +104,7 @@ export class Select {
 
   @Method()
   async floatLabel() {
-    this.labels.forEach(l => { 
+    this.labels.forEach(l => {
       l.classList.add('-floatabove')
     })
     this.setLabelWidthToNotch()
@@ -122,7 +122,7 @@ export class Select {
     this.select.classList.add('-focused')
     this.select.classList.add('rs-ripple-upgraded--background-focused')
     this.rsLineRipple.activate()
-    this.labels.forEach(l => { 
+    this.labels.forEach(l => {
       l.classList.add('-floatabove')
       if (!l.classList.contains('-shake')) { return }
       l.classList.remove('-shake')
@@ -210,7 +210,7 @@ export class Select {
     this.isInvalid()
     this.isRequired()
     this.isMultiple()
-    
+
     slot.addEventListener('slotchange', async () => {
       slot.assignedElements().forEach(e => {
         this.options.push(e)
@@ -220,6 +220,13 @@ export class Select {
 
       this.nativeControl.innerHTML = ''
       this.options.forEach(op => {
+        // Display initial value (current not support for multiple select)
+        if (!this.multiple && this.value) {
+          if (op.getAttribute('value') == this.value) {
+            ;(op as HTMLOptionElement).setAttribute('selected', 'true')
+          }
+        }
+
         this.nativeControl.append(op.cloneNode(true))
       })
 

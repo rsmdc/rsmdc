@@ -35,7 +35,7 @@ export class Textfield {
 
   nativeControl: Element
 
-  htmlNativeConctrol: HTMLSelectElement
+  htmlNativeConctrol: HTMLInputElement
 
   notch: HTMLElement
 
@@ -77,6 +77,11 @@ export class Textfield {
     this.isCountable()
   }
 
+  @Watch('value')
+  valueHandler(newVal: string) {
+    this.valueChanged(newVal)
+  }
+
   @Method()
   async isDisabled() {
     if (this.disabled) {
@@ -115,7 +120,7 @@ export class Textfield {
 
   @Method()
   async floatLabel() {
-    this.labels.forEach(l => { 
+    this.labels.forEach(l => {
       l.classList.add('-floatabove')
     })
   }
@@ -131,8 +136,8 @@ export class Textfield {
   async addFocusStyle() {
     this.textfield.classList.add('-focused')
     this.textfield.classList.add('rs-ripple-upgraded--background-focused')
-    this.rsLineRipple.activate()      
-    this.labels.forEach(l => { 
+    this.rsLineRipple.activate()
+    this.labels.forEach(l => {
       l.classList.add('-floatabove')
       this.notch.classList.add('-border')
       if (!l.classList.contains('-shake')) { return }
@@ -183,11 +188,21 @@ export class Textfield {
     this.input.emit({ value: this.value })
   }
 
+  @Method()
+  async valueChanged(newVal) {
+    if (!this.htmlNativeConctrol)
+      this.htmlNativeConctrol = this.el.shadowRoot.querySelector('.nativecontrol') as HTMLInputElement
+    if (this.htmlNativeConctrol && this.htmlNativeConctrol.value !== newVal) {
+      this.htmlNativeConctrol.value = newVal
+      this.floatLabel()
+    }
+  }
+
   componentDidLoad() {
     this.textfield = this.el.shadowRoot.querySelector('.rs-textfield')
     this.labels = Array.from(this.el.shadowRoot.querySelectorAll('.label'))
     this.nativeControl = this.el.shadowRoot.querySelector('.nativecontrol')
-    this.htmlNativeConctrol = (this.nativeControl as HTMLSelectElement)
+    this.htmlNativeConctrol = (this.nativeControl as HTMLInputElement)
     this.notch = this.el.shadowRoot.querySelector('.notch')
     this.counter = this.el.shadowRoot.querySelector('.counter')
     this.rsLineRipple = new RSLineRipple(this.el.shadowRoot.querySelector('.rs-line-ripple'))
@@ -201,10 +216,15 @@ export class Textfield {
       this.trailingEl = trailing.shadowRoot.querySelector('.rs-textfield-trailing')
       this.addFocusToParent()
     }
-    
+
     if (this.type === 'date') {
-      const labelEl = this.el.shadowRoot.querySelector('.label') 
+      const labelEl = this.el.shadowRoot.querySelector('.label')
       labelEl.classList.add('-date-label')
+    }
+
+    if (this.type === 'text' && this.value) {
+      this.htmlNativeConctrol.value = this.value
+      this.floatLabel()
     }
 
     this.isDisabled()
@@ -229,7 +249,7 @@ export class Textfield {
       this.removeFocusStyle()
     })
   }
-  
+
   componentDidUnLoad() {
     this.nativeControl.removeEventListener('focus', () => {
       this.addFocusStyle()
