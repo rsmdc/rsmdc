@@ -29,6 +29,7 @@
   min-width: $rs-menu-min-width;
   transition: opacity $rs-menu-surface-fade-out-duration linear;
   &.-opened {
+    position: absolute;
     height: auto;
     will-change: transform, opacity;
     display: inline-block;
