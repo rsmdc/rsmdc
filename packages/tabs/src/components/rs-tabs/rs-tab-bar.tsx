@@ -46,6 +46,7 @@ export class TabBar {
       itemEl.addEventListener('click', () => {
         const scrollArea = this.el.shadowRoot.querySelector('.scrollarea')
         const scrollAreaWidth = this.el.shadowRoot.querySelector('.scrollarea').clientWidth
+        const scrollAreaLeft = this.el.shadowRoot.querySelector('.scrollarea').getBoundingClientRect().left
         const tabLeftPosition = itemEl.getBoundingClientRect().left
         const tabRightPosition = itemEl.getBoundingClientRect().right
     
@@ -59,8 +60,8 @@ export class TabBar {
             tabEl.classList.remove('-activated')
           }
         })
+        if (i === 0 || i === tabs.length - 1) {
         
-        if (i === 0 || i === tabs.length-1) {
           if (tabRightPosition > scrollAreaWidth) {
             const left = tabRightPosition + scrollArea.scrollLeft
             this.setScrollPosition(scrollArea, left)
@@ -73,12 +74,12 @@ export class TabBar {
           const rightViewPosition = tabRightPosition + rightTabWidth
           const leftViewPosition = tabLeftPosition - leftTabWidth
   
-          if (rightViewPosition > scrollAreaWidth) {
+          if (rightViewPosition > scrollAreaWidth) {    
             const diff = rightViewPosition - scrollAreaWidth
             const left = diff + scrollArea.scrollLeft
-            this.setScrollPosition(scrollArea, left)
+            this.setScrollPosition(scrollArea, left)      
           } else if (leftViewPosition < 0) {
-            const left = scrollArea.scrollLeft + leftViewPosition
+            const left = scrollArea.scrollLeft + leftViewPosition - scrollAreaLeft
             this.setScrollPosition(scrollArea, left)
           }
         }
@@ -90,14 +91,16 @@ export class TabBar {
         const itemEl = tab.shadowRoot.querySelector('.rs-tab')
         const tabWidth = itemEl.clientWidth
         const tabLeft = itemEl.getBoundingClientRect().left
+        const scrollAreaLeft = this.el.shadowRoot.querySelector('.scrollarea').getBoundingClientRect().left
+        const diff = tabLeft - scrollAreaLeft
         indicator.style.setProperty('--rs-tab-indicator---width', `${tabWidth}px`)
 
         if (itemEl.classList.contains('-activated')) {
-          this.setIndicatorStyle(tabLeft, tabWidth)
+          this.setIndicatorStyle(diff, tabWidth)
         }
 
         tab.addEventListener('click', () => {
-          this.setIndicatorStyle(tabLeft, tabWidth)
+          this.setIndicatorStyle(diff, tabWidth)
         })
       })
     })
