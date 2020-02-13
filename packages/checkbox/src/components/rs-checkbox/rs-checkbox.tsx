@@ -72,6 +72,7 @@ export class Checkbox {
 
   @Method()
   async isHostChecked() {
+    if (!this.rsCheckbox) return
     this.rsCheckbox.checked = this.checked
     this.updateDataChecked()
     this.isChecked()
