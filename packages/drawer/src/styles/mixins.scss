@@ -23,10 +23,11 @@
     }
 
     @at-root {  
-      rs-drawer[opened] {
+      rs-drawer {
         z-index: 100;
         position: absolute;
-        left: 0;      
+        top: 0;
+        left: 0;
       }      
 
       rs-drawer[opened] + rs-app-layout-content {
