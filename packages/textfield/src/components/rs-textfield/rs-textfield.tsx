@@ -123,6 +123,10 @@ export class Textfield {
     this.labels.forEach(l => {
       l.classList.add('-floatabove')
     })
+    this.setLabelWidthToNotch()
+    if (!this.notch.classList.contains('-border')) {
+      this.notch.classList.add('-border')
+    }
   }
 
   @Method()
@@ -222,7 +226,7 @@ export class Textfield {
       labelEl.classList.add('-date-label')
     }
 
-    if (this.type === 'text' && this.value) {
+    if (this.value) {
       this.htmlNativeConctrol.value = this.value
       this.floatLabel()
     }
