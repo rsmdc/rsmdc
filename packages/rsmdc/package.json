@@ -2,7 +2,7 @@
   "name": "@rsmdc/rsmdc",
   "main": "dist/rs-elements.common.js",
   "description": "All components of the material design components.",
-  "version": "1.1.28",
+  "version": "1.1.29",
   "license": "MIT",
   "sideEffects": false,
   "keywords": [
@@ -42,7 +42,7 @@
     "@rsmdc/snackbar": "^1.1.24",
     "@rsmdc/switch": "^1.1.24",
     "@rsmdc/tabs": "^1.1.28",
-    "@rsmdc/textfield": "^1.1.28",
+    "@rsmdc/textfield": "^1.1.29",
     "@rsmdc/theme": "^1.1.24",
     "@rsmdc/top-app-bar": "^1.1.24",
     "@rsmdc/typography": "^1.1.24"
