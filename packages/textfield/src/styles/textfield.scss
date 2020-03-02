@@ -16,6 +16,7 @@
   align-items: center;
   font-family: inherit;
   vertical-align: middle;
+  width: auto;
   > .form:not(.-textarea) {
     display: block;
     position: relative;
@@ -98,6 +99,7 @@
     overflow: hidden;
     box-sizing: border-box;
     border-radius: 4px;
+    width: auto;
     > .input {
       $padding-inset: 16px;
       width: 100%;
@@ -143,7 +145,7 @@
       transform: translateY(-50%) scale(.75);
     }
   }
-   &.-required {
+  &.-required {
     > .form > .label {
       display: inline-flex;
       &:after {
@@ -344,7 +346,7 @@
       border-color: $rs-text-field-outlined-hover-border;
     }
   }
- 
+
   > .counter {
     @include rs-typography(caption);
     @include rs-typography-baseline-top(16px);
@@ -486,4 +488,12 @@
     content: none;
     display: none;
   }
+}
+
+rs-textfield {
+  width: var(--rs-text-field_host--width, auto);
+}
+
+rs-textarea {
+  width: var(--rs-text-field_host--width, auto);
 }

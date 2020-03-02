@@ -1,71 +1,73 @@
-@mixin rs-textfield-type($type) {
-  @if $type == outlined {
+@mixin rs-textfield-type($types...) {
+  @each $type in $types {
+    @if $type == outlined {
 
-    .rs-textfield {
-
-      > .form:not(.-textarea) > .input {
-        border-bottom: none;
-        border-radius: 4px;
-      }
-
-      > .form:not(.-textarea) > .input > .nativecontrol {
-        padding: 12px 16px 14px;
-      }
-
-      > .form > .label {
-        display: none;
-      }
-      
-      > .rs-line-ripple {
-        background-color: none;
-      }
-
-      &.-required > .form > .label {
-        display: none;
-      }
-
-      &.-invalid > .rs-line-ripple {
-        background-color: none;
-      }
-
-      &:not(.-disabled) > .form:not(.-textarea) > .input {
-        background-color: transparent;
-      }
-
-      &:not(.-disabled) > .form:not(.-textarea):hover > .input {
-        background-color: transparent;
-      }
-
-      &:not(.-disabled).-focused > .form:not(.-textarea) {
-        background-color: transparent;
-      }
-
-      &:not(.-disabled).-focused > .form:not(.-textarea):hover > .input {
-        background-color: transparent;
-      }
-
-      > .outline {
-        &.-none {
-          display: flex;
+      .rs-textfield {
+  
+        > .form:not(.-textarea) > .input {
+          border-bottom: none;
+          border-radius: 4px;
+        }
+  
+        > .form:not(.-textarea) > .input > .nativecontrol {
+          padding: 12px 16px 14px;
+        }
+  
+        > .form > .label {
+          display: none;
+        }
+        
+        > .rs-line-ripple {
+          background-color: none;
+        }
+  
+        &.-required > .form > .label {
+          display: none;
+        }
+  
+        &.-invalid > .rs-line-ripple {
+          background-color: none;
+        }
+  
+        &:not(.-disabled) > .form:not(.-textarea) > .input {
+          background-color: transparent;
+        }
+  
+        &:not(.-disabled) > .form:not(.-textarea):hover > .input {
+          background-color: transparent;
+        }
+  
+        &:not(.-disabled).-focused > .form:not(.-textarea) {
+          background-color: transparent;
+        }
+  
+        &:not(.-disabled).-focused > .form:not(.-textarea):hover > .input {
+          background-color: transparent;
+        }
+  
+        > .outline {
+          &.-none {
+            display: flex;
+          }
         }
       }
-    }
-  } @else if(dense) {
-    .rs-textfield {
-      > .form:not(.-textarea) {
-        height: 48px;
-      }
-
-      > .form:not(.-textfield) > .input {
-        padding: 12px 12px 7px;
-      }
-      
-      > .form > .label {
-        top: 14px;
-      }
-
-      > .outline > .notch > .label {
-        top: 14px;
+    } @else if(dense) {
+      .rs-textfield {
+        > .form:not(.-textarea) {
+          height: 48px;
+        }
+  
+        > .form:not(.-textfield) > .input {
+          padding: 12px 12px 7px;
+        }
+        
+        > .form > .label {
+          top: 14px;
+        }
+  
+        > .outline > .notch > .label {
+          top: 14px;
+        }
       }
     }
   }
@@ -138,6 +140,7 @@
 
 @mixin rs-textfield-width($width) {
   .rs-textfield {
+    width: $width;
     > .form:not(.-textarea) > .input {
       width: $width;
     }
@@ -146,7 +149,8 @@
 
 @mixin rs-textarea-width($width) {
   .rs-textfield {
-    > .form.-textarea > .input {
+    width: $width;
+    > .form.-textarea {
       width: $width;
     }
   }
