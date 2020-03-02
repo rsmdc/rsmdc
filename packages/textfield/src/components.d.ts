@@ -30,7 +30,6 @@ export namespace Components {
     'retriveLabelWidth': (labels: any) => Promise<any>;
     'rows': number;
     'setLabelWidthToNotch': () => Promise<void>;
-    'type': string;
     'value': string;
   }
   interface RsTextfield {
@@ -100,7 +99,6 @@ declare namespace LocalJSX {
     'placeholder'?: string;
     'required'?: boolean;
     'rows'?: number;
-    'type'?: string;
     'value'?: string;
   }
   interface RsTextfield extends JSXBase.HTMLAttributes<HTMLRsTextfieldElement> {

@@ -21,8 +21,6 @@ export class Textarea {
 
   @Prop() countable: boolean
 
-  @Prop() type: string = 'text'
-
   @Prop() value: string = ''
 
   @Prop() placeholder: string = ''
@@ -128,6 +126,9 @@ export class Textarea {
     const labelWidth = await this.retriveLabelWidth(this.labels)
     const width = labelWidth * 0.75 + 8
     this.notch.style.setProperty('width', `${width}px`)
+    if (!this.notch.classList.contains('-border')) {
+      this.notch.classList.add('-border')
+    }
   }
 
   @Method()
@@ -194,6 +195,11 @@ export class Textarea {
     this.isInvalid()
     this.isRequired()
     this.isCountable()
+
+    if (this.value) {
+      this.htmlNativeConctrol.value = this.value
+      this.floatLabel()
+    }
     
     this.nativeControl.addEventListener('focus', () => {
       this.addFocusStyle()
