@@ -37,7 +37,7 @@ export class Textarea {
 
   nativeControl: Element
 
-  htmlNativeConctrol: HTMLSelectElement
+  htmlNativeConctrol: HTMLTextAreaElement
 
   notch: HTMLElement
 
@@ -185,7 +185,7 @@ export class Textarea {
     this.textarea = this.el.shadowRoot.querySelector('.rs-textfield')
     this.labels = Array.from(this.el.shadowRoot.querySelectorAll('.label'))
     this.nativeControl = this.el.shadowRoot.querySelector('.input')
-    this.htmlNativeConctrol = (this.nativeControl as HTMLSelectElement)
+    this.htmlNativeConctrol = (this.nativeControl as HTMLTextAreaElement)
     this.notch = this.el.shadowRoot.querySelector('.notch')
     this.counter = this.el.shadowRoot.querySelector('.counter')
     this.rsLineRipple = new RSLineRipple(this.el.shadowRoot.querySelector('.rs-line-ripple'))
