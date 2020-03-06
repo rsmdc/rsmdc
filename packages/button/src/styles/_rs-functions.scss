@@ -1,5 +1,0 @@
-@import "./variables";
-
-@function rs-button-outline-padding($outline-width, $padding: $rs-button-contained-horizontal-padding) {
-  @return max($padding - $outline-width, 0);
-}
