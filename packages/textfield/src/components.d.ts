@@ -31,6 +31,7 @@ export namespace Components {
     'rows': number;
     'setLabelWidthToNotch': () => Promise<void>;
     'value': string;
+    'valueChanged': (newVal: any) => Promise<void>;
   }
   interface RsTextfield {
     'addFocusStyle': () => Promise<void>;

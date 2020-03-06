@@ -77,6 +77,11 @@ export class Textarea {
     this.isCountable()
   }
 
+  @Watch('value')
+  valueHandler(newVal: string) {
+    this.valueChanged(newVal)
+  }
+
   @Method()
   async isDisabled() {
     if (this.disabled) {
@@ -179,6 +184,18 @@ export class Textarea {
   async inputHandler() {
     this.value = this.htmlNativeConctrol.value
     this.input.emit({ value: this.value })
+  }
+
+  @Method()
+  async valueChanged(newVal) {
+    if (!this.htmlNativeConctrol)
+      this.htmlNativeConctrol = this.el.shadowRoot.querySelector('.nativecontrol') as HTMLTextAreaElement
+    if (this.htmlNativeConctrol && this.htmlNativeConctrol.value !== newVal) {
+      this.htmlNativeConctrol.value = newVal
+
+      if (!newVal) return this.removeFocusStyle()
+      this.floatLabel()
+    }
   }
 
   componentDidLoad() {

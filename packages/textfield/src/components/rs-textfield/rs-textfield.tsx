@@ -198,6 +198,8 @@ export class Textfield {
       this.htmlNativeConctrol = this.el.shadowRoot.querySelector('.nativecontrol') as HTMLInputElement
     if (this.htmlNativeConctrol && this.htmlNativeConctrol.value !== newVal) {
       this.htmlNativeConctrol.value = newVal
+
+      if (!newVal) return this.removeFocusStyle()
       this.floatLabel()
     }
   }
