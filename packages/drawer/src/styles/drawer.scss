@@ -1,6 +1,9 @@
+@import "@rsmdc/ripple/mixins";
+@import "@rsmdc/shape/mixins";
+@import "@rsmdc/shape/rs-functions";
+@import "@rsmdc/theme/mixins";
 @import "@rsmdc/typography/mixins";
 @import "@rsmdc/typography/variables";
-@import "./rs-mixins";
 @import "./variables";
 
 rs-drawer {
