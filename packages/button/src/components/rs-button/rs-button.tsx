@@ -91,7 +91,7 @@ export class Button {
 
   render() {
     return  <Host>
-              <button class="rs-button">
+              <button class="rs-button" disabled={this.disabled}>
                 <span class="label">
                   <slot />
                 </span>
