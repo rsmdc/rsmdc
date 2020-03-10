@@ -26,6 +26,7 @@
   overflow: hidden;
   will-change: opacity, transform, color;
   width: var(--width, 200px);
+  border-radius: initial;
 
   // states-base-color
   &::before,
@@ -71,7 +72,7 @@
     }
   }
 
-  &:not(.-disabled):hover {
+  &:not(.-disabled):not(.-focused):hover {
     > .outline {
       > .leading {
         border-color: $rs-select-bottom-line-hover-color;
@@ -84,7 +85,6 @@
       > .trailing {
         border-color: $rs-select-bottom-line-hover-color;
       }
-
     }
   }
 
@@ -117,7 +117,7 @@
   }
 
   &.-focused > .dropdownicon {
-    transform: rotate(180deg) translateY(-5px);
+    transform: rotate(180deg);
     transition: transform $rs-select-dropdown-transition-duration $rs-animation-standard-curve-timing-function;
     opacity: 1;
     color: $rs-theme-primary;
@@ -269,50 +269,11 @@
     }
   }
   
-  &.-icon {
-    > .icon {
-      @include rs-rtl-reflexive-position(left, 16px);
-      display: inline-block;
-      position: absolute;
-      bottom: 16px;
-      box-sizing: border-box;
-      width: $rs-select-icon-size;
-      height: $rs-select-icon-size;
-      border: none;
-      background-color: transparent;
-      fill: currentColor;
-      opacity: $rs-select-icon-opacity;
-      text-decoration: none;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    > .icon:not([tabindex]),
-    > .icon[tabindex="-1"] {
-      cursor: default;
-      pointer-events: none;
-    }
-  
-
-    > .nativecontrol,
-    > .selectedtext {
-      @include rs-rtl-reflexive-property(padding, $rs-select-icon-padding /* left */, $rs-select-icon-right-padding /* right */);
-    }
-  
-    // &.rs-select__menu .rs-list-item__text {
-    //   @include rs-rtl-reflexive-property(padding, 32px /* left-value */, 32px /* right-value */);
-    // }
-  }
-
   &.-focused {
     > .label,
     > .outline > .notch > .label {
       @include rs-floating-label-focused_($rs-select-focused-label-color);
     }
-  }
-
-  &.-icon:not(.-disabled) > .icon {
-    color: $rs-theme-on-surface;
   }
 
   > .label,
@@ -339,6 +300,7 @@
     padding-top: 20px;
     position: absolute;
     top: 0;
+    border-radius: initial;
   }
 
   > .selectedtext {

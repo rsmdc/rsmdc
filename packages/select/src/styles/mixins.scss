@@ -105,15 +105,17 @@
   }
 }
 
-/* 
-.icon {
-  @include rs-notched-outline-floating-label-float-position($rs-select-outlined-label-position-y, $rs-select-outlined-with-leading-icon-label-position-x);
-}
-*/
-
 @mixin rs-select-icon-color($color) {
   .rs-select {
-    &.-icon:not(.-disabled) > .icon {
+    > .dropdownicon {
+      color: $color;
+    }
+  }
+}
+
+@mixin rs-select-focused-icon-color($color) {
+  .rs-select {
+    &.-focused > .dropdownicon {
       color: $color;
     }
   }
@@ -121,10 +123,15 @@
 
 @mixin rs-select-focused-outline-color($color) {
   .rs-select:not(.-disabled).-focused > .outline {
-    > .leading,
-    > .notch,
+    > .leading {
+      border-color: $color;
+    }
+
+    > .notch {
+      border-color: $color;
+    }
+
     > .trailing {
-      opacity: .24;
       border-color: $color;
     }
   }
@@ -153,7 +160,7 @@
   .rs-select {
     &:not(.-disabled).-focused {
       > .label,
-      > .outline > .notch > .label.-outlined {
+      > .outline > .notch > .label {
         color: $color;
       }
     }
@@ -197,23 +204,33 @@
 }
 
 @mixin rs-select-outline-color($color) {
-
   .rs-select:not(.-disabled) > .outline {
-    > .leading,
-    > .notch,
+    > .leading {
+      border-color: $color;
+    }
+
+    > .notch {
+      border-color: $color;
+    }
+
     > .trailing {
-      opacity: .24;
       border-color: $color;
     }
   }
 }
 
 @mixin rs-select-hover-outline-color($color) {
-  .rs-select:not(.-disabled):not(.-focused) {
-    > .nativecontrol:hover ~,
-    > .selectedtext:hover ~ {
-      .outline {
-        opacity: .24;
+  .rs-select:not(.-disabled):not(.-focused):hover {
+    > .outline {
+      > .leading {
+        border-color: $color;
+      }
+  
+      > .notch {
+        border-color: $color;
+      }
+  
+      > .trailing {
         border-color: $color;
       }
     }
@@ -227,9 +244,10 @@
   $masked-radius: rs-shape-mask-radius($radius, 1 1 0 0);
   $calc-radius: rs-shape-resolve-percentage-radius(rs-select-height, $masked-radius);
 
-  .rs-select,
+  .rs-select {
+    border-radius: $calc-radius;
+  }
   .rs-select > .nativecontrol {
-
     border-radius: $calc-radius;
   }
 }
