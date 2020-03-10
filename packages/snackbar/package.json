@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/snackbar",
-  "version": "1.1.31",
+  "version": "1.1.33",
   "description": "Material design snackbar component by custom elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@rsmdc/animation": "^1.1.24",
     "@rsmdc/base": "^1.1.24",
-    "@rsmdc/button": "^1.1.31",
+    "@rsmdc/button": "^1.1.33",
     "@rsmdc/elevation": "^1.1.24",
     "@rsmdc/ripple": "^1.1.24",
     "@rsmdc/rtl": "^1.1.24",

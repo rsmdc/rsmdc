@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/button",
-  "version": "1.1.31",
+  "version": "1.1.33",
   "description": "Material design button component by custom elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
