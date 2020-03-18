@@ -43,7 +43,7 @@
   transition: 
     left 0.2s ease-in-out,
     width 0.2s ease-in-out;
-  width: var(--rs-tab-indicator---width);
+  width: var(--rs-tab-indicator---width, auto);
   height: 2px;
   background-color: $rs-theme-primary;
   display: flex;

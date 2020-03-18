@@ -21,7 +21,7 @@ export class TabBar {
   async setIndicatorStyle(position, width) {
     const indicator = (this.el.shadowRoot.querySelector('.rs-tab-indicator') as HTMLScriptElement)
     indicator.style.setProperty('left', `${position}px`)
-    indicator.style.setProperty('--rs-tab-indicator---width', `${width}px`)
+    indicator.style.setProperty('width', `${width}px`)
   }
 
   @Method()
@@ -93,7 +93,7 @@ export class TabBar {
         const tabLeft = itemEl.getBoundingClientRect().left
         const scrollAreaLeft = this.el.shadowRoot.querySelector('.scrollarea').getBoundingClientRect().left
         const diff = tabLeft - scrollAreaLeft
-        indicator.style.setProperty('--rs-tab-indicator---width', `${tabWidth}px`)
+        indicator.style.setProperty('--rs-tab-indicator---width', `${tabs[0].clientWidth}px`)
 
         if (itemEl.classList.contains('-activated')) {
           this.setIndicatorStyle(diff, tabWidth)

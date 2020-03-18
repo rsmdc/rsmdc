@@ -76,7 +76,7 @@
   }
 }
 
-@mixin rs-tab-activated-color($color) {
+@mixin rs-tab-activated-ink-color($color) {
   .rs-tab {
     &.-activated {
       > .content {
@@ -107,7 +107,7 @@
   }
 }
 
-@mixin rs-tab-width($width) {
+@mixin rs-tab-bar-width($width) {
   .rs-tab-bar {
     > .scroller {
       width: $width;
