@@ -42,7 +42,7 @@
       > .label:before {
         font-family: $font-family;
         content: $name;
-        display: inline-block;
+        display: inline-flex;
       }
       
       > .label:after {
@@ -60,7 +60,7 @@
     .rs-button {
       
       > .label:before {
-        display: inline-block;
+        display: inline-flex;
       }
 
       > .label:after {
@@ -77,7 +77,7 @@
       }
 
       > .label:after {
-        display: inline-block;
+        display: inline-flex;
       }
     }
   }
@@ -122,10 +122,11 @@
 
 @mixin rs-button-icon-color($color) {
   .rs-button:not(.-disabled) {
-    > .label:before {
+    &.-no-text > .label:before {
       color: $color;
     }
-    > .label:after {
+    
+    &.-no-text  > .label:after {
       color: $color;
     }
   }
@@ -135,6 +136,7 @@
   .rs-button:not(.-disabled) {
     > .label {
       color: $color;
+      display: none;
     }
   }
 }
@@ -233,6 +235,11 @@
         box-shadow: rs-elevation(6);
         transition: rs-elevation-transition-value();
         @include rs-ripple-upgraded($rs-theme-on-secondary);
+        
+        > .label {
+          display: inline-flex;
+          align-items: center;
+        }
         
         > .label:before {
           margin: 0;
