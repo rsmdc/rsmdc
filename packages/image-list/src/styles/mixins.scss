@@ -5,9 +5,14 @@
       --rs-buttonCHlabelPEbefore---color: black;
     }
 
+    rs-image-list-item {
+      width: 100%;
+    }
+
     .rs-image-list {
       column-count: 3;
-      column-gap: 10px;
+      column-gap: 4.2px;
+      display: block;
     }
 
     .rs-image-list-image {
@@ -35,8 +40,24 @@
 }
 
 @mixin rs-image-list-columns($column-count, $gutter-size) {
+
+  rs-image-list-item {
+    width: calc(100% / #{$column-count} - 4.2px);
+  }
+
   .rs-image-list {
     column-count: $column-count;
+  }
+
+  .rs-image-list-item {
+    margin: 2px $gutter-size $gutter-size $gutter-size;
+  }
+}
+
+@mixin rs-image-list-masonry-columns($count, $gutter-size) {
+
+  .rs-image-list {
+    column-count: $count;
     column-gap: $gutter-size;
   }
 }
@@ -53,7 +74,7 @@
   }
 }
 
-@mixin rs-image-list-aspect($width-height-ratio) {
+@mixin rs-image-list-media-aspect($width-height-ratio) {
   .rs-image-list-image {
     padding-bottom: calc(100% / $width-height-ratio);
     > .image {
