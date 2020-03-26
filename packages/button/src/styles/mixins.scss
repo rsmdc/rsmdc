@@ -2,7 +2,7 @@
 @import "@rsmdc/ripple/mixins-stencil";
 @import "./variables";
 
-@mixin rs-button-fab-position($position) {
+@mixin rs-button-fab-fixed-position($position) {
   @if $position == center {
     .rs-button {
       &.-fixed {
@@ -122,6 +122,14 @@
 
 @mixin rs-button-icon-color($color) {
   .rs-button:not(.-disabled) {
+    > .label:before {
+      color: $color;
+    }
+
+    > .label:after {
+      color: $color;
+    }
+    
     &.-no-text > .label:before {
       color: $color;
     }
@@ -154,11 +162,11 @@
       
       .rs-button {
         border: solid 2px $rs-theme-primary;
-        
+
         &.-disabled {
           border-color: $rs-button-disabled-ink-color; 
         }
-      
+
       }
     }@else if $type == raised {
     
@@ -294,12 +302,20 @@
   @include rs-button-container-fill-color($container-fill-color);
 
   @if ($fill-tone == "dark") {
-    @include rs-button-ink-color(rs-theme-ink-color-for-fill_(primary, dark));
-    @include rs-button-states-color(rs-theme-ink-color-for-fill_(primary, dark));
-    @include rs-button-icon-color(rs-theme-ink-color-for-fill_(primary, dark));
+    @include rs-button-ink-color(white);
+    @include rs-button-states-color(white);
+    @include rs-button-icon-color(white);
+    @include rs-button-outline-color(white);
   } @else {
-    @include rs-button-ink-color(rs-theme-ink-color-for-fill_(primary, light));
-    @include rs-button-states-color(rs-theme-ink-color-for-fill_(primary, light));
-    @include rs-button-icon-color(rs-theme-ink-color-for-fill_(primary, light));
+    @include rs-button-ink-color(black);
+    @include rs-button-states-color(black);
+    @include rs-button-icon-color(black);
+    @include rs-button-outline-color(black);
+  }
+}
+
+@mixin rs-button-width($width) {
+  .rs-button {
+    width: $width;
   }
 }

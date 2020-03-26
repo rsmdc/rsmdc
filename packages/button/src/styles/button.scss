@@ -74,6 +74,7 @@
     width: 18px;
     height: 18px;
     font-size: 18px;
+    align-items: center;
     vertical-align: top;
     margin: 0 -4px 0 8px;
   }
@@ -144,13 +145,13 @@
     border-color: inherit;
 
     &.-no-text {
-      color: #000;
+      color: $rs-theme-on-surface;
     }
     &.-no-text > .label:before {
-      color: #000;
+      color: inherit;
     }
     &.-no-text > .label:after {
-      color: #000;
+      color: inherit;
     }
     > .label {
       color: inherit;
@@ -188,3 +189,6 @@
   }
 }
 
+rs-button[disabled] {
+  pointer-events: none;
+}
