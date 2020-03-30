@@ -62,13 +62,13 @@
   }
 }
 
-@mixin rs-chip-outline($width: 1px, $style: solid, $color: mdc-theme-prop-value(on-surface)) {
+@mixin rs-chip-outline-style($width: 1px, $style: solid, $color: mdc-theme-prop-value(on-surface)) {
   @include rs-chip-outline-width($width);
-  @include rs-chip-outline-style($style);
+  @include rs-chip-outline-border-style($style);
   @include rs-chip-outline-color($color);
 }
 
-@mixin rs-chip-outline-style($style) {
+@mixin rs-chip-outline-border-style($style) {
   .rs-chip {
     border-style: $style;
   }
@@ -101,17 +101,24 @@
 @mixin rs-chip-fill-color-accessible($color) {
   $fill-tone: rs-theme-tone($color);
   @include rs-chip-fill-color($color);
-  @include rs-chip-outline-color($color);
   @if ($fill-tone == "dark") {
-    @include rs-chip-ink-color(rs-theme-ink-color-for-fill_(primary, dark));
-    @include rs-chip-selected-ink-color(text-primary-on-dark);
-    @include rs-chip-icon-color(text-primary-on-dark);
-    @include rs-ripple-upgraded(rs-theme-ink-color-for-fill_(primary, dark));
+    @include rs-chip-ink-color(white);
+    @include rs-chip-selected-ink-color(white);
+    @include rs-chip-icon-color(white);
+    @include rs-chip-selected-icon-color(white);
+    @include rs-chip-outline-color(white);
+    .rs-chip {
+      @include rs-ripple-upgraded(white);
+    }
   } @else {
-    @include rs-chip-ink-color(rs-theme-ink-color-for-fill_(primary, light));
-    @include rs-chip-selected-ink-color(text-primary-on-light);
-    @include rs-chip-icon-color(text-primary-on-light);
-    @include rs-ripple-upgraded(rs-theme-ink-color-for-fill_(primary, light));
+    @include rs-chip-ink-color(black);
+    @include rs-chip-selected-ink-color(black);
+    @include rs-chip-icon-color(black);
+    @include rs-chip-selected-icon-color(black);
+    @include rs-chip-outline-color(black);
+    .rs-chip {
+      @include rs-ripple-upgraded(black);
+    }
   }
 }
 
@@ -178,9 +185,37 @@
   }
 }
 
-
 @mixin rs-chip-shape-radius($radius) {
   .rs-chip {
     border-radius: $radius;
+  }
+}
+
+@mixin rs-chip-selected-fill-color($color) {
+  .rs-chip {
+    &.-selected {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin rs-chip-selected-outline-color($color) {
+  .rs-chip {
+    &.-selected {
+      border-color: $color;
+    }
+  }
+}
+
+
+@mixin rs-chip-selected-icon-color($color) {
+  .rs-chip.-selected {
+    > .label::before {
+      color: $color;
+    }
+
+    > .label::after {
+      color: $color;
+    }
   }
 }

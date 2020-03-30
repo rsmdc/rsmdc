@@ -84,6 +84,9 @@
     > .label::before {
       color: $rs-theme-primary;
     }
+    > .label::after {
+      color: $rs-theme-primary;
+    }
   }
 
   &.-set-filter {
