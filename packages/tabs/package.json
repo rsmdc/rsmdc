@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/tabs",
-  "version": "1.1.28",
+  "version": "1.1.35",
   "description": "Material design tabs component by custom elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
