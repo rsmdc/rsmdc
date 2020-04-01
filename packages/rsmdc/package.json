@@ -2,7 +2,7 @@
   "name": "@rsmdc/rsmdc",
   "main": "dist/rs-elements.common.js",
   "description": "All components of the material design components.",
-  "version": "1.1.35",
+  "version": "1.1.36",
   "license": "MIT",
   "sideEffects": false,
   "keywords": [
@@ -21,7 +21,7 @@
     "@rsmdc/button": "^1.1.35",
     "@rsmdc/card": "^1.1.24",
     "@rsmdc/checkbox": "^1.1.27",
-    "@rsmdc/chips": "^1.1.28",
+    "@rsmdc/chips": "^1.1.36",
     "@rsmdc/data-table": "^1.1.24",
     "@rsmdc/dialog": "^1.1.24",
     "@rsmdc/dom": "^1.1.24",
