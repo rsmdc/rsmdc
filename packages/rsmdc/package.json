@@ -29,6 +29,7 @@
     "@rsmdc/elevation": "^1.1.24",
     "@rsmdc/floating-label": "^1.1.24",
     "@rsmdc/form-field": "^1.1.24",
+    "@rsmdc/image-list": "^1.1.24",
     "@rsmdc/line-ripple": "^1.1.24",
     "@rsmdc/list": "^1.1.28",
     "@rsmdc/menu": "^1.1.28",
