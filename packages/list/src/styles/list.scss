@@ -90,9 +90,11 @@ rs-list-meta {
   fill: currentColor;
   border-radius: 50%;
   background-size: 100%;
-  margin-right: 32px;
+  margin-right: auto;
   background-image: none;
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &::before {
     width: 24px;
@@ -102,6 +104,10 @@ rs-list-meta {
     font-size: 24px;
     color: inherit;
   }
+}
+
+.rs-list-text {
+  color: inherit;
 }
 
 .rs-list-divider {
