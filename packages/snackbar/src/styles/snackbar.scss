@@ -54,7 +54,12 @@
     padding-bottom: 0;
     background-color: $rs-snackbar-fill-color;
     min-width: auto;
-    max-width: 100%;
+    max-width: $rs-snackbar-max-width;
+
+    @media (max-width: $rs-snackbar-mobile-breakpoint) {
+      min-width: 100%;
+    }
+
   }
 
   > .dismiss {

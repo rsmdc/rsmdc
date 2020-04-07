@@ -29,14 +29,11 @@
   }
 }
 
-@mixin rs-snackbar-min-width($min-width, $mobile-breakpoint: $rs-snackbar-mobile-breakpoint) {
+@mixin rs-snackbar-min-width($min-width) {
+
   .rs-snackbar {
     > .surface {
       min-width: $min-width;
-
-      @media (max-width: $mobile-breakpoint), (max-width: $min-width) {
-        min-width: 100%;
-      }
     }
   }
 }
@@ -59,15 +56,6 @@
 @mixin rs-snackbar-viewport-margin($margin) {
   .rs-snackbar {
     margin: $margin;
-  }
-}
-
-@mixin rs-snackbar-container-fill-color($color) {
-
-  .rs-dialog {
-    > .surface {
-      background-color: $color;
-    }
   }
 }
 
