@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/drawer",
-  "version": "1.1.31",
+  "version": "1.1.38",
   "description": "Material design drawer component by custom elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -28,7 +28,7 @@
     "@rsmdc/animation": "^1.1.24",
     "@rsmdc/base": "^1.1.24",
     "@rsmdc/elevation": "^1.1.24",
-    "@rsmdc/list": "^1.1.28",
+    "@rsmdc/list": "^1.1.38",
     "@rsmdc/ripple": "^1.1.24",
     "@rsmdc/rtl": "^1.1.24",
     "@rsmdc/shape": "^1.1.24",
