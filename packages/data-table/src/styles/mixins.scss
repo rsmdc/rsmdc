@@ -37,7 +37,7 @@
 }
 
 @mixin rs-data-table-divider-size($size) {
-  rs-data-table-body > rs-data-table-row {
+  .rs-data-table-row {
     border-top-width: $size;
     border-top-style: solid;
   }
@@ -111,15 +111,17 @@
 }
 
 @mixin rs-data-table-divider-color($color) {
-  rs-data-table-row {
+  .rs-data-table-row {
     border-top-color: $color;
   }
 }
 
 @mixin rs-data-table-row-hover-fill-color($color) {
+
+  $value: rgba($color, .04);
  .rs-data-table-row {
    &:hover:not(.-header) {
-      background-color: $color;
+      background-color: $value;
     }
   }
 }

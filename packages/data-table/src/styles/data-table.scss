@@ -16,7 +16,7 @@
   overflow: hidden;
   border-style: solid;
   border-width: 1px;
-  border-color: gray;
+  border-color: $rs-data-table-stroke-color;
   background-color: transparent;
   > .table {
     width: 100%;
@@ -43,6 +43,9 @@ rs-data-table-header > rs-data-table-row {
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-top-style: solid;
+  border-top-width: $rs-data-table-divider-size;
+  border-top-color: $rs-data-table-divider-color;
   &:hover:not(.-header) {
     background-color: $rs-data-table-row-hover-fill-color;
   }
@@ -55,6 +58,10 @@ rs-data-table-header > rs-data-table-row {
     }
   }
 }
+
+rs-data-table-header > rs-data-table-row {
+  --rs-data-table-row---border-top-width: 0;
+} 
 
 .rs-data-table-header {
   @include rs-typography(subtitle2);
@@ -90,11 +97,6 @@ rs-data-table-row {
   background-color: inherit;
 }
 
-rs-data-table-body > rs-data-table-row {
-  border-top-style: solid;
-  border-top-width: $rs-data-table-divider-size;
-  border-top-color: $rs-data-table-divider-color;
-}
 
 rs-data-table-cell {
   display: table-cell;

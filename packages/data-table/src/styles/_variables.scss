@@ -28,7 +28,7 @@ $rs-data-table-row-fill-color: inherit !default;
 $rs-data-table-selected-row-fill-color: rgba(rs-theme-prop-value(primary),0.04) !default;
 
 $rs-data-table-checked-icon-color: primary !default;
-$rs-data-table-divider-color: rgba($rs-theme-on-surface,0.12) !default;
+$rs-data-table-divider-color: rgba(rs-theme-prop-value(on-surface),0.12) !default;;
 $rs-data-table-divider-size: 1px !default;
 $rs-data-table-row-hover-fill-color: rgba(rs-theme-prop-value(on-surface),0.04) !default;
 $rs-data-table-checkbox-touch-dimension: 48px !default;
