@@ -74,3 +74,77 @@
     }
   }
 }
+
+@mixin rs-drawer-title-ink-color($color) {
+  .rs-drawer-title {
+    color: $color;
+  }
+}
+
+@mixin rs-drawer-subtitle-ink-color($color) {
+  .rs-drawer-subtitle {
+    color: $color;
+  }
+}
+
+@mixin rs-drawer-scrim-fill-color($color) {
+  $value: rgba($color, .32);
+  .rs-drawer {
+    
+    > .scrim {
+      background-color: $value;
+    }
+  }
+}
+
+@mixin rs-drawer-surface-fill-color($color) {
+  .rs-drawer {
+    > .content {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin rs-drawer-filled-accessible($container-fill-color) {
+  $fill-tone: rs-theme-tone($container-fill-color);
+  @include rs-drawer-surface-fill-color($container-fill-color);
+
+  @if ($fill-tone == "dark") {
+    @include rs-drawer-title-ink-color(white);
+    @include rs-drawer-subtitle-ink-color(white);
+    @include rs-list-item-states-color(white);
+    @include rs-list-item-primary-text-ink-color(white);
+    @include rs-list-item-meta-ink-color(white);
+    rs-list {
+      --rs-list-text---color: white;
+      --rs-list-graphicPEbefore---color: white;
+    }
+  } @else {
+    @include rs-drawer-title-ink-color(black);
+    @include rs-drawer-subtitle-ink-color(black);
+    @include rs-list-item-states-color(black);
+    @include rs-list-item-primary-text-ink-color(black);
+    @include rs-list-item-meta-ink-color(black);
+    rs-list {
+      --rs-list-text---color: black;
+      --rs-list-graphicPEbefore---color: black;
+    }
+  }
+}
+
+@mixin rs-drawer-divider-color($color) {
+  .rs-drawer {
+    > .content {
+      border-color: $color;
+    }
+  }
+}
+
+@mixin rs-drawer-item-shape-radius($radius) {
+  .rs-drawer {
+    border-radius: 0 $radius $radius 0;
+    > .content {
+      border-radius: 0 $radius $radius 0;
+    }
+  }
+}
