@@ -158,3 +158,64 @@
     }
   }
 }
+
+@mixin rs-app-bar-title-ink-color($color) {
+  .rs-app-bar-title {
+    color: $color;
+  }
+}
+
+@mixin rs-app-bar-icon-ink-color($color) {
+  .rs-app-bar-nav {
+
+    > .label::before {
+      color: $color;
+    }
+  }
+
+  .rs-app-bar-item {
+
+    > .label::before {
+      color: $color;
+    }
+
+  }
+}
+
+@mixin rs-app-bar-fill-color($color) {
+  .rs-app-bar {
+    background-color: $color;
+  }
+}
+
+@mixin rs-app-bar-icon-states-color($color) {
+  .rs-app-bar-nav {
+    
+    &.rs-ripple-upgraded {
+      @include rs-ripple-upgraded($color);
+    }
+  }
+
+  .rs-app-bar-item {
+    
+    &.rs-ripple-upgraded {
+      @include rs-ripple-upgraded($color);
+    }
+  }
+}
+
+@mixin rs-app-bar-filled-accessible($color) {
+  @include rs-app-bar-fill-color($color);
+  @include rs-app-bar-title-ink-color(rs-theme-accessible-ink-color($color));
+  @include rs-app-bar-icon-ink-color(rs-theme-accessible-ink-color($color));
+  @include rs-app-bar-icon-states-color(rs-theme-accessible-ink-color($color));
+}
+
+@mixin rs-app-bar-short-shape-radius($radius) {
+  .rs-app-bar {
+
+    &.-compact.-fixed-scrolled {
+      border-bottom-right-radius: $radius;
+    }
+  }
+}

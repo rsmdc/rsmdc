@@ -51,6 +51,7 @@
     width: $rs-top-app-bar-short-collapsed-width;
     box-shadow: rs-elevation(4);
     border-radius: 0 0 24px 0;
+    border-bottom-right-radius: auto;
     padding-left: 0;
     margin-left: 0;
   }
@@ -140,6 +141,9 @@ rs-app-bar-nav {
 
   > .label {
     @include rs-app-bar-icon-label_;
+    &::before {
+      color: inherit;
+    }
   }
 
   &.rs-ripple-upgraded {
@@ -159,6 +163,10 @@ rs-app-bar-item {
 
   > .label {
     @include rs-app-bar-icon-label_;
+  }
+
+  > .label::before {
+    color: inherit;
   }
   
   &.rs-ripple-upgraded {
