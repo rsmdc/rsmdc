@@ -150,6 +150,10 @@
   .rs-list-primary {
     color: $color;
   }
+
+  .rs-list-text {
+    color: $color;
+  }
 }
 
 @mixin rs-list-item-secondary-text-ink-color($color) {

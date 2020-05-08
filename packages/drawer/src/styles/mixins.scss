@@ -105,31 +105,16 @@
   }
 }
 
-@mixin rs-drawer-filled-accessible($container-fill-color) {
-  $fill-tone: rs-theme-tone($container-fill-color);
-  @include rs-drawer-surface-fill-color($container-fill-color);
+@mixin rs-drawer-filled-accessible($color) {
+  $accessibleColor: rs-theme-accessible-ink-color($color);
 
-  @if ($fill-tone == "dark") {
-    @include rs-drawer-title-ink-color(white);
-    @include rs-drawer-subtitle-ink-color(white);
-    @include rs-list-item-states-color(white);
-    @include rs-list-item-primary-text-ink-color(white);
-    @include rs-list-item-meta-ink-color(white);
-    rs-list {
-      --rs-list-text---color: white;
-      --rs-list-graphicPEbefore---color: white;
-    }
-  } @else {
-    @include rs-drawer-title-ink-color(black);
-    @include rs-drawer-subtitle-ink-color(black);
-    @include rs-list-item-states-color(black);
-    @include rs-list-item-primary-text-ink-color(black);
-    @include rs-list-item-meta-ink-color(black);
-    rs-list {
-      --rs-list-text---color: black;
-      --rs-list-graphicPEbefore---color: black;
-    }
-  }
+  @include rs-drawer-title-ink-color($accessibleColor);
+  @include rs-drawer-subtitle-ink-color($accessibleColor);
+  @include rs-list-item-states-color($accessibleColor);
+  @include rs-list-item-primary-text-ink-color($accessibleColor);
+  @include rs-list-item-meta-ink-color($accessibleColor);
+  @include rs-list-graphic-ink-color($accessibleColor);
+  @include rs-drawer-surface-fill-color($color);
 }
 
 @mixin rs-drawer-divider-color($color) {
