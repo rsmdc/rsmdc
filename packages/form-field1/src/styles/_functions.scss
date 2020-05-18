@@ -1,0 +1,5 @@
+@import "@rsmdc/animation/variables";
+
+@function rs-form-field-transition($property, $duration: 150ms) {
+  @return #{$property} #{$duration} $rs-animation-standard-curve-timing-function;
+}

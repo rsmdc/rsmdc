@@ -1,0 +1,36 @@
+{
+  "name": "@rsmdc/form-field1",
+  "version": "1.1.10",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/form-field/form-field.js",
+  "files": [
+    "dist/",
+    "loader/",
+    "src/styles/",
+    "src/dist/",
+    "rs-form-field.scss"
+  ],
+  "scripts": {
+    "convert": "node ../../converter/index.js",
+    "build": "yarn convert && stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@rsmdc/ripple": "^1.1.24",
+    "@rsmdc/shape": "^1.1.24",
+    "@rsmdc/theme": "^1.1.24",
+    "@rsmdc/typography": "^1.1.24",
+    "@stencil/core": "^1.12.2"
+  },
+  "license": "MIT"
+}

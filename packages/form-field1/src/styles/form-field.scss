@@ -1,0 +1,78 @@
+@import "@rsmdc/typography/mixins";
+@import "../../../typography/mixins-stencil";
+@import "@rsmdc/ripple/mixins-stencil";
+@import "./variables";
+@import "./functions";
+
+
+.rs-form-field {
+  position: relative;
+  display: inline-flex;
+  // align-items: center;
+  flex-direction: column;
+  vertical-align: middle;
+}
+
+.rs-form-line {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-right: $rs-form-field-helper-line-padding;
+  padding-left: $rs-form-field-helper-line-padding;
+}
+
+.rs-form-helper {
+  @include rs-typography(caption);
+  @include rs-typography-baseline-top(16px);
+  white-space: nowrap;
+  margin: 0;
+  color: $rs-form-field-helper-text-color;
+  opacity: 1;
+  transition: rs-form-field-transition(opacity);
+  will-change: opacity;
+}
+
+.rs-form-error {
+  @include rs-typography(caption);
+  @include rs-typography-baseline-top(16px);
+  margin: 0;
+  opacity: 1;
+  color: $rs-form-field-error;
+  white-space: nowrap;
+  margin: 0;
+
+}
+
+rs-textfield[disabled] + rs-form-helper {
+  --rs-form-helper---color: $rs-form-field-disabled-helper-text-color;
+}
+rs-textfield[disabled] + rs-form-error {
+  --rs-form-error---color: $rs-form-field-disabled-helper-text-color;
+}
+rs-textfield[disabled] + rs-form-helper + rs-form-error {
+  --rs-form-error---color: $rs-form-field-disabled-helper-text-color;
+}
+
+
+
+rs-textarea[disabled] + rs-form-helper {
+  --rs-form-helper---color: $rs-form-field-disabled-helper-text-color;
+}
+rs-textarea[disabled] + rs-form-error {
+  --rs-form-error---color: $rs-form-field-disabled-helper-text-color;
+}
+rs-textarea[disabled] + rs-form-helper + rs-form-error {
+  --rs-form-error---color: $rs-form-field-disabled-helper-text-color;
+}
+
+
+rs-textfield {
+  --rs-textfield---width: 100%;
+  --rs-textfieldCHformPSnotV-textareaCHinput---width: 100%;
+}
+rs-textfield[countable] + rs-form-helper {
+  margin-right: 32px;
+}
+rs-textfield[countable] + rs-form-error {
+  margin-right: 32px;
+}
