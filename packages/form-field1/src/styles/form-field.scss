@@ -76,3 +76,7 @@ rs-textfield[countable] + rs-form-helper {
 rs-textfield[countable] + rs-form-error {
   margin-right: 32px;
 }
+
+rs-textfield[invalid] + rs-form-helper {
+  --rs-form-helper---color: $rs-form-field-error;
+}
