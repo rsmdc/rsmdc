@@ -244,9 +244,6 @@
     > .rs-line-ripple {
       background-color: $color;
     }
-    &.-focused:not(.-disabled):not(.-invalid) > .form > .label {
-      color: $color;
-    }
   }
 }
 
@@ -324,6 +321,7 @@
 
 @mixin rs-textfield-focused-outline-color($color) {
   .rs-textfield {
+
     &.-focused:not(.-disabled):not(.-invalid) {
       > .outline:not(.-area) {
         > .leading,
@@ -332,7 +330,7 @@
           border-color: $color;
         }
         
-        > .notch > .label {
+        > .notch {
           color: $color;
         }
       }
@@ -349,19 +347,16 @@
         > .trailing {
           border-color: $color;
         }
-
-        > .notch > .label {
-          color: $color;
-        }
       }
     }
   }
 }
 
 @mixin rs-textfield-focused-color-accessible($color) {
-  @include rs-textfield-focused-outline-color($color);
   @include rs-textfield-line-ripple-color($color);
+  @include rs-textfield-focused-outline-color($color);
   @include rs-textfield-caret-color($color);
+  @include rs-textarea-focused-outline-color($color);
   .rs-textfield {
     &.-focused:not(.-disabled):not(.-invalid) {
       > .form > .label {

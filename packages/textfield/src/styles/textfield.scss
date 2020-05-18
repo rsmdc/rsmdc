@@ -206,7 +206,7 @@
         color: $rs-text-field-error;
       }
     }
-
+    
     &:not(.-disabled) > .form:not(.-textarea) > .input {
       border-bottom-color: $rs-text-field-error;
       &:hover {
@@ -421,6 +421,9 @@
     }
   }
   &:not(.-focused):not(.-invalid) > .outline:not(.-area) {
+    > .form > .input {
+      border-bottom: none;
+    }
     > .leading {
       border-color: $rs-text-field-outlined-idle-border;
     }
@@ -497,4 +500,9 @@ rs-textfield {
 
 rs-textarea {
   width: var(--rs-text-field_host--width, auto);
+}
+
+
+rs-textfield[invalid] > rs-textfield-trailing {
+  --rs-textfield-trailing---color: $rs-text-field-error;
 }
