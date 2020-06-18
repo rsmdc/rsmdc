@@ -1,7 +1,7 @@
 {
   "name": "@rsmdc/line-ripple",
   "description": "The Material Components for rsmdc.",
-  "version": "1.1.24",
+  "version": "1.1.39",
   "license": "MIT",
   "keywords": [
     "material components",
@@ -18,9 +18,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@rsmdc/animation": "^1.1.24",
-    "@rsmdc/base": "^1.1.24",
-    "@rsmdc/theme": "^1.1.24",
+    "@rsmdc/animation": "^1.1.39",
+    "@rsmdc/base": "^1.1.39",
+    "@rsmdc/theme": "^1.1.39",
     "tslib": "^1.9.3"
   }
 }

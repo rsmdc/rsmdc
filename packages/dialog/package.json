@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/dialog",
-  "version": "1.1.24",
+  "version": "1.1.39",
   "description": "Material design dialog component by custom elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -25,12 +25,12 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@rsmdc/animation": "^1.1.24",
-    "@rsmdc/elevation": "^1.1.24",
-    "@rsmdc/rtl": "^1.1.24",
-    "@rsmdc/shape": "^1.1.24",
-    "@rsmdc/theme": "^1.1.24",
-    "@rsmdc/typography": "^1.1.24",
+    "@rsmdc/animation": "^1.1.39",
+    "@rsmdc/elevation": "^1.1.39",
+    "@rsmdc/rtl": "^1.1.39",
+    "@rsmdc/shape": "^1.1.39",
+    "@rsmdc/theme": "^1.1.39",
+    "@rsmdc/typography": "^1.1.39",
     "@stencil/core": "^1.3.0"
   },
   "license": "MIT",

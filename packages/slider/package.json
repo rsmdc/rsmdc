@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/slider",
-  "version": "1.1.24",
+  "version": "1.1.39",
   "description": "Material design slider component by custom elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -25,9 +25,9 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@rsmdc/rtl": "^1.1.24",
-    "@rsmdc/theme": "^1.1.24",
-    "@rsmdc/typography": "^1.1.24",
+    "@rsmdc/rtl": "^1.1.39",
+    "@rsmdc/theme": "^1.1.39",
+    "@rsmdc/typography": "^1.1.39",
     "@stencil/core": "^1.0.7"
   },
   "license": "MIT",

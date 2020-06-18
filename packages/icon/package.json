@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/icon",
-  "version": "0.0.1",
+  "version": "1.1.39",
   "description": "Mterial design icon",
   "main": "_icon.scss",
   "keywords": [

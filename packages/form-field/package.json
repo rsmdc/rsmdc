@@ -1,7 +1,7 @@
 {
   "name": "@rsmdc/form-field",
   "description": "Material Components for the web wrapper for laying out form fields and labels next to one another.",
-  "version": "1.1.24",
+  "version": "1.1.39",
   "license": "MIT",
   "keywords": [
     "material components",
@@ -14,12 +14,12 @@
     "url": "https://github.com/rsmdc/rsmdc.git"
   },
   "dependencies": {
-    "@rsmdc/animation": "^1.1.24",
-    "@rsmdc/base": "^1.1.24",
-    "@rsmdc/ripple": "^1.1.24",
-    "@rsmdc/shape": "^1.1.24",
-    "@rsmdc/theme": "^1.1.24",
-    "@rsmdc/typography": "^1.1.24",
+    "@rsmdc/animation": "^1.1.39",
+    "@rsmdc/base": "^1.1.39",
+    "@rsmdc/ripple": "^1.1.39",
+    "@rsmdc/shape": "^1.1.39",
+    "@rsmdc/theme": "^1.1.39",
+    "@rsmdc/typography": "^1.1.39",
     "tslib": "^1.9.3"
   },
   "publishConfig": {

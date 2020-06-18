@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/card",
-  "version": "1.1.24",
+  "version": "1.1.39",
   "description": "The Material Components for the web card component.",
   "license": "MIT",
   "keywords": [
@@ -14,11 +14,11 @@
     "url": "https://github.com/rsmdc/rsmdc.git"
   },
   "dependencies": {
-    "@rsmdc/elevation": "^1.1.24",
-    "@rsmdc/ripple": "^1.1.24",
+    "@rsmdc/elevation": "^1.1.39",
+    "@rsmdc/ripple": "^1.1.39",
     "@rsmdc/rtl": "^0.42.0",
-    "@rsmdc/shape": "^1.1.24",
-    "@rsmdc/theme": "^1.1.24"
+    "@rsmdc/shape": "^1.1.39",
+    "@rsmdc/theme": "^1.1.39"
   },
   "publishConfig": {
     "access": "public"

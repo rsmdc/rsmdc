@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/top-app-bar",
-  "version": "1.1.24",
+  "version": "1.1.39",
   "description": "The Material Components for the web top app bar component.",
   "license": "MIT",
   "main": "./dist/rs-elements.common.js",
@@ -16,14 +16,14 @@
     "top-app-bar"
   ],
   "dependencies": {
-    "@rsmdc/animation": "^1.1.24",
-    "@rsmdc/base": "^1.1.24",
-    "@rsmdc/elevation": "^1.1.24",
-    "@rsmdc/ripple": "^1.1.24",
-    "@rsmdc/rtl": "^1.1.24",
-    "@rsmdc/shape": "^1.1.24",
-    "@rsmdc/theme": "^1.1.24",
-    "@rsmdc/typography": "^1.1.24",
+    "@rsmdc/animation": "^1.1.39",
+    "@rsmdc/base": "^1.1.39",
+    "@rsmdc/elevation": "^1.1.39",
+    "@rsmdc/ripple": "^1.1.39",
+    "@rsmdc/rtl": "^1.1.39",
+    "@rsmdc/shape": "^1.1.39",
+    "@rsmdc/theme": "^1.1.39",
+    "@rsmdc/typography": "^1.1.39",
     "tslib": "^1.9.3"
   },
   "publishConfig": {

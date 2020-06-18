@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/radio",
-  "version": "1.1.24",
+  "version": "1.1.39",
   "description": "Material design radio component by custom elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -28,11 +28,11 @@
     "@stencil/core": "^1.0.7"
   },
   "dependencies": {
-    "@rsmdc/animation": "^1.1.24",
-    "@rsmdc/base": "^1.1.24",
-    "@rsmdc/ripple": "^1.1.24",
-    "@rsmdc/theme": "^1.1.24",
-    "@rsmdc/typography": "^1.1.24",
+    "@rsmdc/animation": "^1.1.39",
+    "@rsmdc/base": "^1.1.39",
+    "@rsmdc/ripple": "^1.1.39",
+    "@rsmdc/theme": "^1.1.39",
+    "@rsmdc/typography": "^1.1.39",
     "tslib": "^1.9.3"
   },
   "license": "MIT",
