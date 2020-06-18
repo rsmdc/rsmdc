@@ -1,0 +1,30 @@
+{
+  "name": "@rsmdc/icon",
+  "version": "0.0.1",
+  "description": "Mterial design icon",
+  "main": "_icon.scss",
+  "keywords": [
+    "sass",
+    "scss",
+    "icon",
+    "material-design"
+  ],
+  "files": [
+    "_icon.scss",
+    "README.md"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "material-icons": "^0.3.1"
+  },
+  "peerDependencies": {
+    "material-icons": "^0.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rsmdc/rsmdc.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

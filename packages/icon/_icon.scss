@@ -1,0 +1,23 @@
+@import 'material-icons/iconfont/variables';
+@import 'material-icons/iconfont/mixins';
+@import 'material-icons/iconfont/material-icons';
+
+$material-icons-css-class: 'icon' !default;
+$material-icons-css-search: '_' !default;
+$material-icons-css-replace: '-' !default;
+
+.#{$material-icons-css-class} {
+  @include material-icons();
+}
+
+@each $name, $codepoint in $material-icons-codepoints {
+  $class-name: material-icons-str-replace(
+    $name,
+    $material-icons-css-search,
+    $material-icons-css-replace
+  );
+
+  .-mi-#{$class-name} {
+    @include material-icon($name);
+  }
+}
