@@ -31,9 +31,9 @@ export class Textfield {
 
   @Prop() autocomplete: string
 
-  @Prop() value: string
+  @Prop() value: string = ''
 
-  @Prop() placeholder: string
+  @Prop() placeholder: string = ''
 
   @Prop() maxlength: string
 
