@@ -29,6 +29,10 @@ export class Textfield {
 
   @Prop() maxlength: string = ''
 
+  @Prop() min: string = ''
+
+  @Prop() max: string = ''
+
   textfield: Element
 
   labels: Element[]
@@ -287,6 +291,8 @@ export class Textfield {
                       type={this.type}
                       placeholder={this.placeholder}
                       maxlength={this.maxlength}
+                      min={this.min}
+                      max={this.max}
                       class="nativecontrol" />
                     <div class="action -none">
                       <slot />

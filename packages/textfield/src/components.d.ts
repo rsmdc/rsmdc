@@ -47,7 +47,9 @@ export namespace Components {
     'isInvalid': () => Promise<void>;
     'isRequired': () => Promise<void>;
     'label': string;
+    'max': string;
     'maxlength': string;
+    'min': string;
     'placeholder': string;
     'removeFocusStyle': () => Promise<void>;
     'required': boolean;
@@ -107,7 +109,9 @@ declare namespace LocalJSX {
     'disabled'?: boolean;
     'invalid'?: boolean;
     'label'?: string;
+    'max'?: string;
     'maxlength'?: string;
+    'min'?: string;
     'onChange'?: (event: CustomEvent<any>) => void;
     'onInput'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
