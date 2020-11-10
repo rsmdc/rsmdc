@@ -1,6 +1,6 @@
 {
   "name": "@rsmdc/textfield",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Material design textfield component by custom elements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
