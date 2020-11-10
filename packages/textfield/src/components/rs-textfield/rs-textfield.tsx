@@ -21,17 +21,39 @@ export class Textfield {
 
   @Prop() countable: boolean
 
+  @Prop() readonly: boolean
+
+  @Prop() spellcheck: boolean
+
+  @Prop() multiple: boolean
+
   @Prop() type: string = 'text'
 
-  @Prop() value: string = ''
+  @Prop() autocomplete: string
 
-  @Prop() placeholder: string = ''
+  @Prop() value: string
 
-  @Prop() maxlength: string = ''
+  @Prop() placeholder: string
 
-  @Prop() min: string = ''
+  @Prop() maxlength: string
 
-  @Prop() max: string = ''
+  @Prop() minlength: string
+
+  @Prop() min: string
+
+  @Prop() max: string
+
+  @Prop() step: string
+
+  @Prop() list: string
+
+  @Prop() pattern: string
+
+  @Prop() size: number
+
+
+  @Prop() accept: string
+
 
   textfield: Element
 
@@ -289,10 +311,20 @@ export class Textfield {
                   <div class="input">
                     <input
                       type={this.type}
+                      list={this.list}
+                      readonly={this.readonly}
                       placeholder={this.placeholder}
                       maxlength={this.maxlength}
+                      minlength={this.minlength}
                       min={this.min}
                       max={this.max}
+                      step={this.step}
+                      spellcheck={this.spellcheck}
+                      autocomplete={this.autocomplete}
+                      pattern={this.pattern}
+                      size={this.size}
+                      multiple={this.multiple}
+                      accept={this.accept}
                       class="nativecontrol" />
                     <div class="action -none">
                       <slot />

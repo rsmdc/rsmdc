@@ -34,8 +34,10 @@ export namespace Components {
     'valueChanged': (newVal: any) => Promise<void>;
   }
   interface RsTextfield {
+    'accept': string;
     'addFocusStyle': () => Promise<void>;
     'addFocusToParent': () => Promise<void>;
+    'autocomplete': string;
     'changeHandler': () => Promise<void>;
     'countable': boolean;
     'disabled': boolean;
@@ -47,14 +49,22 @@ export namespace Components {
     'isInvalid': () => Promise<void>;
     'isRequired': () => Promise<void>;
     'label': string;
+    'list': string;
     'max': string;
     'maxlength': string;
     'min': string;
+    'minlength': string;
+    'multiple': boolean;
+    'pattern': string;
     'placeholder': string;
+    'readonly': boolean;
     'removeFocusStyle': () => Promise<void>;
     'required': boolean;
     'retriveLabelWidth': (labels: any) => Promise<any>;
     'setLabelWidthToNotch': () => Promise<void>;
+    'size': number;
+    'spellcheck': boolean;
+    'step': string;
     'type': string;
     'value': string;
     'valueChanged': (newVal: any) => Promise<void>;
@@ -105,17 +115,27 @@ declare namespace LocalJSX {
     'value'?: string;
   }
   interface RsTextfield extends JSXBase.HTMLAttributes<HTMLRsTextfieldElement> {
+    'accept'?: string;
+    'autocomplete'?: string;
     'countable'?: boolean;
     'disabled'?: boolean;
     'invalid'?: boolean;
     'label'?: string;
+    'list'?: string;
     'max'?: string;
     'maxlength'?: string;
     'min'?: string;
+    'minlength'?: string;
+    'multiple'?: boolean;
     'onChange'?: (event: CustomEvent<any>) => void;
     'onInput'?: (event: CustomEvent<any>) => void;
+    'pattern'?: string;
     'placeholder'?: string;
+    'readonly'?: boolean;
     'required'?: boolean;
+    'size'?: number;
+    'spellcheck'?: boolean;
+    'step'?: string;
     'type'?: string;
     'value'?: string;
   }
